@@ -14,3 +14,12 @@
 .text-teal {
   color: $teal;
 }
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: $teal;
+}
+
+.nav-link {
+  color: $teal;
+}
