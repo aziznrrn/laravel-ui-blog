@@ -19,7 +19,7 @@ class ArticleFactory extends Factory
         return [
             'title' => $this->faker->name(),
             'content' => $this->faker->text(),
-            'category_id' => null,
+            'category_id' => $this->faker->numberBetween(1, 10),
             'user_id' => $this->faker->numberBetween(1, 10),
         ];
     }
