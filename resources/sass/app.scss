@@ -1,11 +1,19 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Cantarell');
 
+// Font-Awesome
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+
 // Variables
 @import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// DataTables
+@import "~datatables.net-bs5/css/dataTables.bootstrap5.css";
+@import "~datatables.net-responsive-bs5/css/responsive.bootstrap5.css";
 
 .bg-teal {
   background-color: $teal;

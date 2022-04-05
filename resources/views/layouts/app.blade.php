@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Blog') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    @routes
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -81,5 +81,37 @@
             @yield('content')
         </main>
     </div>
+
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/format-date.js') }}"></script>
+    <script src="{{ asset('js/generate-datatable.js') }}"></script>
+    <script>
+        const swalSetup = (title, message, type, html) => {
+            Swal.fire({
+                icon: type,
+                title: title,
+                text: message,
+                confirmButtonColor: '#20c997',
+            })
+        };
+        const swalSuccess = (message) => {
+            swalSetup("Operation Success", message, "success");
+        };
+        const swalError = (message) => {
+            swalSetup("Something wrong", message, "error");
+        };
+        const swalWarning = (message) => {
+            swalSetup("Warning", message, "warning");
+        };
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+            },
+            error: function (data) {
+                swalError(data.responseJSON.message);
+            }
+        });
+    </script>
+    @yield('scripts')
 </body>
 </html>
