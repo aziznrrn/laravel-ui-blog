@@ -20,4 +20,7 @@ Auth::routes();
 
 Route::middleware('auth')->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::resource('articles', App\Http\Controllers\ArticleController::class)->except(['create', 'show']);
+    Route::get('categories/list', [App\Http\Controllers\CategoryController::class, 'list'])->name('categories.list');
+    Route::resource('categories', App\Http\Controllers\CategoryController::class)->except(['create', 'show']);
 });
