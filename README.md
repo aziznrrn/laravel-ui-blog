@@ -6,4 +6,4 @@ make sure the system requirements meet the following criteria
 
 to start the project
 - adjust the `.env` file with your environment
-- run the command `php artisan migrate --step` and after that `php artisan passport:install`
+- run the command `composer install` then `npm run prod` then `php artisan migrate --step`
