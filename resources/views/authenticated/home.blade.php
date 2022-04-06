@@ -5,13 +5,13 @@
         <div class="card-body">
             <ul class="nav nav-pills" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="pills-article-tab"
+                    <button class="nav-link fw-bold active" id="pills-article-tab"
                             data-bs-toggle="pill" data-bs-target="#pills-article"
                             type="button" role="tab" aria-controls="pills-article"
                             aria-selected="true" title="tab article">Article</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-category-tab"
+                    <button class="nav-link fw-bold" id="pills-category-tab"
                             data-bs-toggle="pill" data-bs-target="#pills-category"
                             type="button" role="tab" aria-controls="pills-category"
                             aria-selected="false" title="tab category">Category</button>
@@ -60,7 +60,7 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="article-modalLabel">Modal title</h5>
+                    <h5 class="modal-title text-gradient-violet fw-bold" id="article-modalLabel">Article</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -99,7 +99,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="category-modalLabel">Modal title</h5>
+                    <h5 class="modal-title text-gradient-violet fw-bold" id="category-modalLabel">Category</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -227,10 +227,10 @@
                 ],
                 initComplete: function (setting, json) {
                     $('#article-table_length').html(`
-                        <button class="btn btn-sm bg-teal text-white"
+                        <button class="btn btn-sm bg-gradient-violet text-white"
                                 id="article-add-btn"
                                 title="Create Article">
-                            <i class="fa-regular fa-square-plus"></i>
+                            <i class="fa-regular fa-square-plus fw-bold"></i>
                         </button>
                     `);
 
@@ -373,10 +373,10 @@
                 ],
                 initComplete: function (setting, json) {
                     $('#category-table_length').html(`
-                        <button class="btn btn-sm bg-teal text-white"
+                        <button class="btn btn-sm bg-gradient-violet text-white"
                                 id="category-add-btn"
                                 title="Create Category">
-                            <i class="fa-regular fa-square-plus"></i>
+                            <i class="fa-regular fa-square-plus fw-bold"></i>
                         </button>
                     `);
 
