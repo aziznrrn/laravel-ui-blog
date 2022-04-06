@@ -10,14 +10,19 @@ class PostController extends Controller
 {
     public function index(Request $request)
     {
+
         $category_id = $request->category_id ?? null;
-        $articles = Article::with(['category', 'user'])
-            ->when($category_id, function ($query, $category_id) {
-                $query->where('category_id', $category_id);
-            })->latest()->paginate(10);
-        
         $category = $category_id ? Category::where('id', $category_id)->first() : null;
-        
+
+        $articles = Article::with('category')
+            ->when($category_id, function ($query) use ($category_id) {
+                return $query->where('category_id', $category_id);
+            })
+            // trim each article content to 400 characters using eloquent raw query
+            ->selectRaw('articles.*, SUBSTRING(articles.content, 1, 400) as content')
+            ->latest()
+            ->paginate(10);
+
         return view('frontpage.index', [
             'category' => $category,
             'articles' => $articles

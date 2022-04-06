@@ -21,7 +21,7 @@
                         data-id="{{ $article->category_id }}">{{ $article->category->name }}</a>
                 </div>
                 <p class="text-muted">by {{ $article->user->name }} | {{ date_format($article->updated_at, 'Y-m-d H:i') }}</p>
-                <p>{!! $article->content !!}</p>
+                <p>{!! $article->content !!}...</p>
             </div>
         </div>
     @endforeach
