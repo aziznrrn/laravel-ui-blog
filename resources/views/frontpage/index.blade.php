@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <h1 class="mb-4 header">{{ config('app.name') }}'s Articles
+    <h1 class="mb-4 text-white display-6">{{ config('app.name') }}'s Articles
         @if(!empty($category)) with <span class="badge p-2 text-gradient-violet">{{ $category->name }}</span> Category @endif
     </h1>
     @if(empty($articles->count()))
