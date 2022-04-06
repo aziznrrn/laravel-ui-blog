@@ -22,20 +22,18 @@ class ArticleController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function($row) {
                     return '
-                        <div class="btn-group" role="group" aria-label="action button">
-                            <a data-id="'.$row->id.'" class="btn-show btn btn-sm btn-outline-primary"
-                               title="show article">
-                                <i class="fa-regular fa-eye"></i>
-                            </a>
-                            <a data-id="'.$row->id.'" class="btn-edit btn btn-sm btn-outline-warning"
-                               title="edit article">
-                                <i class="fa-regular fa-pen-to-square"></i>
-                            </a>
-                            <a data-id="'.$row->id.'" class="btn-delete btn btn-sm btn-outline-danger"
-                               title="delete article">
-                                <i class="fa-regular fa-trash-can"></i>
-                            </a>
-                        </div>
+                        <a href="'.route('posts.show', $row->id).'" class="btn-show btn btn-sm border-2 btn-outline-primary"
+                            title="show article">
+                            <i class="fa-regular fa-eye"></i>
+                        </a>
+                        <a data-id="'.$row->id.'" class="btn-edit btn btn-sm border-2 btn-outline-warning"
+                            title="edit article">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                        </a>
+                        <a data-id="'.$row->id.'" class="btn-delete btn btn-sm border-2 btn-outline-danger"
+                            title="delete article">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </a>
                     ';
                 })
                 ->rawColumns(['action'])
