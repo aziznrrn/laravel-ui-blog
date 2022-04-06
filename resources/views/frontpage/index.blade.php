@@ -25,4 +25,17 @@
             </div>
         </div>
     @endforeach
+    @if(!empty($articles->links()->render()))
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-center">
+                @if (empty($category))
+                    {{ $articles->links() }}
+                @else
+                    {{ $articles->appends(['category_id' => $category->id])->links() }}
+                @endif
+                </div>
+            </div>
+        </div>
+    @endif
 @endsection
